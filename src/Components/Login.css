@@ -1,0 +1,134 @@
+.LoginPage {
+  height: 91%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 144);
+}
+
+.LoginPage {
+  background: linear-gradient(
+        90deg,
+        hsl(256, 33, 10),
+        (22px - 1px),
+        transparent 1%
+      )
+      center,
+    linear-gradient(hsl(256, 33, 10), (22px - 1px), transparent 1%) center,
+    hsl(256, 33, 70);
+  background-size: 22px 22px;
+}
+.marquees {
+  position: absolute;
+}
+.backText {
+  font-size: 150px;
+  width: 100%;
+  /* border: 1px solid black; */
+  font-weight: 800;
+  /* position: absolute; */
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: orange;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.backText2 {
+  direction: left;
+}
+.backText div {
+  display: inline-block;
+}
+.Login-Box {
+  z-index: 1;
+  background-color: #000218;
+  height: 85%;
+  width: 35%;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.circle-design {
+  height: 45%;
+  border-radius: 34px 34px 0 0;
+  background-image: url("./patternpad.png");
+  background-position: center;
+  /* border: 1px solid white; */
+  width: 100%;
+}
+.welcome {
+  color: white;
+  font-family: "Lobster", cursive;
+  font-size: 35px;
+  width: 100%;
+  /* border: 1px solid orange; */
+  display: flex;
+  height: 20%;
+  margin-top: 10px;
+}
+.empty {
+  width: 10%;
+}
+.Login-Form {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid orange; */
+  align-items: center;
+  justify-content: center;
+}
+
+.email,
+.password {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.363);
+  height: 15%;
+  margin-top: 15px;
+  width: 70%;
+  border-radius: 40px;
+  color: white;
+  padding: 0 20px;
+}
+.email::placeholder {
+  color: white;
+}
+.password::placeholder {
+  color: white;
+}
+
+.forgotpwd {
+  width: 75%;
+  text-align: right;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.616);
+}
+.forgotpwd:hover {
+  color: #e26e33;
+}
+.login-button {
+  background-color: #e26e33;
+  color: white;
+  margin-top: 25px;
+  border: none;
+  outline: none;
+  width: 25%;
+  height: 30px;
+  border-radius: 40px;
+  font-size: 20px;
+}
+.new-user {
+  display: flex;
+  margin-top: 5px;
+  align-items: flex-end;
+}
+.new-user div {
+  color: #e26e33;
+  padding-left: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}

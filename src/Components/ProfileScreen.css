@@ -1,0 +1,102 @@
+.outer-ProfileScreen {
+  height: 100%;
+  background-color: rgba(233, 13, 13, 0);
+  display: flex;
+  justify-content: center;
+}
+.ProfileScreen {
+  height: 100%;
+  width: 90%;
+  border-color: #000c18;
+  /* background-color: rgba(28, 3, 70); */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 20px 20px;
+  align-items: center;
+  /* justify-content: center; */
+}
+.Upper-Profile {
+  display: flex;
+  width: 70%;
+  padding-left: 15px;
+}
+
+.DpArea {
+  background-color: #000c1800;
+  border: 2px solid rgb(143, 218, 124);
+}
+
+.nameBioFollowers {
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.nameAndusername {
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  /* align-items: center; */
+  justify-content: space-evenly;
+  margin-left: 30px;
+  height: 100%;
+}
+.profilename {
+  font-size: 30px;
+  color: white;
+  font-weight: 500;
+}
+.profileusername {
+  font-size: 25px;
+  margin-top: -10px;
+}
+
+.buttonsprofile {
+  height: 40px;
+  /* border: 2px solid grey; */
+  margin-bottom: -20px;
+  display: flex;
+  align-items: center;
+}
+
+.followerAndfollowing {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+  /* border: 1px solid rgb(240, 231, 231); */
+}
+.profilefollowing,
+.profilefollowers,
+.profilePosts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.F-heading {
+  font-size: 23px;
+}
+.F-count {
+  font-size: 25px;
+}
+.Profile-Bio {
+  margin: 25px 0;
+  width: 70%;
+  /* border: 2px solid white; */
+  font-size: 22px;
+  height: 80px;
+  padding-left: 15px;
+}
+
+.allFeedGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 72%;
+  align-items: center;
+  /* border: 2px solid white; */
+  justify-content: flex-start;
+  height: 100%;
+  margin-top: 30px;
+}

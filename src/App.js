@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
+import Navigation from "./Components/Navigation";
+import Home from "./Components/Home";
+// import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ProfileScreen from "./Components/ProfileScreen";
+import MyProfileScreen from "./Components/MyProfileScreen";
+// import { Redirect } from "react-router-dom";
 
 function App() {
+  // const { isAuth } = useSelector((state) => state.userInfo);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        {/* <MyProfileScreen /> */}
+        <Switch>
+          <Route path="/" exact component={Login} />
+          <Route path="/home" exact component={Home} />
+          {/* <Route
+            path="/login"
+            render={() => {
+              !isAuth ? <Login /> : <Redirect path="/home" />;
+            }}
+          /> */}
+          <Route path="/login" exact component={Login} />
+
+          <Route path="/signup" exact component={Signup} />
+          <Route path="/:username" exact component={ProfileScreen} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

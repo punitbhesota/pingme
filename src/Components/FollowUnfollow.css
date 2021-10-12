@@ -1,0 +1,23 @@
+.FollowUnFollowBtn {
+  background-color: orange;
+  width: 90px;
+  cursor: pointer;
+  height: 25px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.follow {
+  background-color: orange;
+  border: 1.5px solid orange;
+}
+.unfollow {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1.5px solid white;
+}
