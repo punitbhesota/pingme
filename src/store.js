@@ -5,20 +5,17 @@ import {
   userReducer,
   userListReducer,
   userDetailsReducer,
-  // dpChangeReducer,
-  // FollowUnfollowReducer,
 } from "./reducers/userReducer";
 import { getUser } from "./actions/userActions";
 import { postReducer } from "./reducers/postReducer";
+import { conversationReducer } from "./reducers/conversationReducer";
 
 const reducers = combineReducers({
   userInfo: userReducer,
   userList: userListReducer,
   userDetailInfo: userDetailsReducer,
-  // DofollowUnfollow: FollowUnfollowReducer,
   postList: postReducer,
-  // initialDP: dpChangeReducer,
-  // mypostList: mypostReducer,
+  chatList: conversationReducer,
 });
 
 let initialState = {
@@ -39,13 +36,10 @@ let initialState = {
     posts: [],
     loading: false,
   },
-  // initialDP: {
-  //   dpimage: "",
-  // },
-  // mypostList: {
-  //   myposts: [],
-  //   loading: false,
-  // },
+  chatList: {
+    chats: [],
+    loading: false,
+  },
 };
 
 if (localStorage.getItem("token")) {

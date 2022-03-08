@@ -1,0 +1,23 @@
+.conversation {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 0 20px;
+  cursor: pointer;
+  /* justify-content: center; */
+  padding: 10px;
+}
+
+.conversation:hover {
+  background-color: rgba(245, 243, 243, 0.144);
+}
+
+.conversationDp {
+  margin-right: 20px;
+}
+
+.conversationName {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+}

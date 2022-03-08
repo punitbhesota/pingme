@@ -1,0 +1,32 @@
+.FollowUnFollowBtn {
+  background-color: orange;
+  /* background-color: rgb(255, 255, 144); */
+  /* background-color: red; */
+  width: 90px;
+  cursor: pointer;
+  height: 25px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  /* color: black; */
+}
+
+.follow {
+  background-color: orange;
+  /* background-color: rgb(255, 255, 144); */
+  /* background-color: red; */
+
+  border: 1.5px solid orange;
+  /* border: 1.5px solid rgb(255, 255, 144); */
+  /* border: 1.5px solid red; */
+}
+.unfollow {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1.5px solid black;
+  color: black;
+}

@@ -55,27 +55,7 @@ const userListReducer = (state = initialUsers, action) => {
       return state;
   }
 };
-// const initialDP = {
-//   dpimage: "",
-// };
-// const dpChangeReducer = (state = initialDP, action) => {
-//   switch (action.type) {
-//     case "DP_UPDATED":
-//       return { ...state, token: action.payload.token };
-//     default:
-//       return state;
-//   }
-// };
 
-// const FollowUnfollowReducer = (state, action) => {
-//   switch (action.type) {
-//     case "USER_FOLLOW_SUCCESS":
-//       return state;
-
-//     default:
-//       return state;
-//   }
-// };
 export {
   userReducer,
   userListReducer,

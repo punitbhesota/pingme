@@ -5,17 +5,18 @@ const Post = require("../models/PostSchema");
 const User = require("../models/UserSchema");
 const multer = require("multer");
 const { body, validationResult } = require("express-validator");
+const path = require("path");
 
 //storage define for upload posts
 const storage = multer.diskStorage({
   //file destination
   destination: function (request, file, callback) {
-    callback(null, "./public/uploads/images");
+    callback(null, path.join(path.resolve(), "backend", "uploads"));
   },
 
   //file name
   filename: function (request, file, callback) {
-    callback(null, Date.now() + file.originalname);
+    callback(null, file.originalname);
   },
 });
 const upload = multer({
@@ -28,7 +29,7 @@ const upload = multer({
 //ROUTE 1 : FETCHING ALL POSTS   =  GET(/api/post/fetchallposts)
 router.get("/fetchallposts", async (req, res) => {
   try {
-    const allPosts = await Post.find().populate("user", "-password");
+    const allPosts = await Post.find().populate("user", "username name _id ");
     res.send(allPosts);
   } catch (error) {
     console.error(error.message);
@@ -53,44 +54,9 @@ router.get("/fetchfeedposts", fetchuser, async (req, res) => {
   }
 });
 
-// router.get("/fetchposts", fetchuser, async (req, res) => {
-//   try {
-//     const posts = await Posts.find({ user: req.body.id });
-//     res.json(posts);
-//   } catch (error) {
-//     console.error(error.message);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
-// ROUTE 3 : FETCH POSTS OF OTHER PEOPLE PROFILES
-// router.get("/fetchprofileposts", fetchuser, async (req, res) => {
-//   try {
-//     const profilePosts = await Post.find().where;
-//   } catch (error) {
-//     console.error(error.message);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
-// // ROUTE 4 : FETCH MY PROFILE POSTS
-// router.get("/fetchmyposts/:id", async (req, res) => {
-//   try {
-//     const posts = await Post.find({ _id: req.params.id }).populate(
-//       "user",
-//       "-password"
-//     );
-//     res.json(posts);
-//   } catch (error) {
-//     console.error(error.message);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
-// //ROUTE 5  : ADD POSTS = POST(/api/post/addpost)    LOGIN REQUIRED
+// ROUTE 5  : ADD POSTS THROUGH LINK = POST(/api/post/addpost)    LOGIN REQUIRED
 // router.post(
 //   "/addpost",
-//   upload.single("image"),
 //   fetchuser,
 //   [
 //     body("photo", "post cannot be blank").exists(),
@@ -107,7 +73,6 @@ router.get("/fetchfeedposts", fetchuser, async (req, res) => {
 //         photo,
 //         caption,
 //         user: req.body.id,
-//         img: req.file.filename,
 //       });
 //       const savedPost = await post.save();
 //       await User.findByIdAndUpdate(req.body.id, {
@@ -124,24 +89,24 @@ router.get("/fetchfeedposts", fetchuser, async (req, res) => {
 // ROUTE 5  : ADD POSTS MULTER = POST(/api/post/addpost)    LOGIN REQUIRED
 router.post(
   "/addpost",
-  upload.single("image"),
+  upload.single("photo"),
   fetchuser,
-  [
-    body("photo", "post cannot be blank").exists(),
-    body("caption", "caption cannot be blank").exists(),
-  ],
+  [body("caption", "caption cannot be blank").exists()],
   async (req, res) => {
     try {
-      const { caption } = req.body;
+      const caption = req.body.caption;
+      const photo = `http://localhost:5000/uploads/${req.file.originalname}`;
+      console.log(caption);
+      console.log(req.file.path);
+
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
       const post = new Post({
-        // photo,
-        caption,
         user: req.body.id,
-        photo: req.file.filename,
+        photo,
+        caption,
       });
       const savedPost = await post.save();
       await User.findByIdAndUpdate(req.body.id, {
@@ -176,4 +141,22 @@ router.delete("/deletepost/:id", fetchuser, async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
+//ROUTE FOR COMMENT
+router.post("/commenton/:id", async (req, res) => {
+  try {
+    // const comment = req.body.comment;
+    let post = await Post.findById(req.params.id);
+    if (!post) {
+      return res.status(404).send("Post not Found");
+    }
+    await Post.findByIdAndUpdate(req.params.id, {
+      $push: { comments: req.body },
+    });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 module.exports = router;

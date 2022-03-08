@@ -1,12 +1,14 @@
 import "./App.css";
-import Signup from "./Components/Signup";
-import Login from "./Components/Login";
-import Navigation from "./Components/Navigation";
-import Home from "./Components/Home";
+import Signup from "./Pages/Signup/Signup";
+import Login from "./Pages/Login/Login";
+import Navigation from "./Components/Navigation/Navigation";
+import Home from "./Pages/Home/Home";
 // import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProfileScreen from "./Components/ProfileScreen";
-import MyProfileScreen from "./Components/MyProfileScreen";
+import ProfileScreen from "./Pages/Profile/ProfileScreen";
+import ChatPage from "./Pages/Chatpage/ChatPage";
+import InnerNavMobile from "./Components/InnerNavMobile/InnerNavMobile";
+import AvailableUsersMobile from "./Pages/AvailableUsersMobile/AvailableUsersMobile";
 // import { Redirect } from "react-router-dom";
 
 function App() {
@@ -14,8 +16,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navigation />
-        {/* <MyProfileScreen /> */}
         <Switch>
           <Route path="/" exact component={Login} />
           <Route path="/home" exact component={Home} />
@@ -26,10 +26,18 @@ function App() {
             }}
           /> */}
           <Route path="/login" exact component={Login} />
+          <Route path="/chatnow" exact component={ChatPage} />
 
           <Route path="/signup" exact component={Signup} />
           <Route path="/:username" exact component={ProfileScreen} />
+          <Route
+            path="/availableusersmobile"
+            exact
+            component={AvailableUsersMobile}
+          />
         </Switch>
+        <InnerNavMobile />
+        {/* <AvailableUsersMobile /> */}
       </div>
     </Router>
   );

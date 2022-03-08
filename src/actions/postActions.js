@@ -1,16 +1,17 @@
 import axios from "axios";
 
-const addPost = (userData) => async (dispatch) => {
-  const { data } = await axios.post("/api/auth/addpost", { ...userData });
-  const token = data.authToken;
-  localStorage.setItem("token", JSON.stringfy(token));
-  const { data: user } = await axios.get("/api/auth/getuser", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  dispatch({ type: "USER_LOGIN", payload: user });
-};
+// const addPost = (postData, token) => async (dispatch) => {
+//   const { data } = await axios.post(
+//     "/api/post/addpost",
+//     { ...postData, postDetails: postData },
+//     {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     }
+//   );
+//   dispatch({ type: "USER_LOGIN", payload: data });
+// };
 
 const fetchallposts = () => async (dispatch) => {
   const { data } = await axios.get("/api/post/fetchallposts");
@@ -31,4 +32,9 @@ const fetchmyposts = (id) => async (dispatch) => {
   dispatch({ type: "MY_POSTS_LIST_SUCCESS", payload: data });
 };
 
-export { addPost, fetchallposts, fetchfeedposts, fetchmyposts };
+export {
+  // addPost,
+  fetchallposts,
+  fetchfeedposts,
+  fetchmyposts,
+};

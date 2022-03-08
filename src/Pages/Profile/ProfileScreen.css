@@ -1,0 +1,212 @@
+.outer-ProfileScreen {
+  height: 100vh;
+  background-color: rgba(233, 13, 13, 0);
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  color: black;
+}
+.outer-ProfileScreen::-webkit-scrollbar {
+  display: none;
+}
+
+.ProfileScreen {
+  height: 100%;
+  width: 90%;
+  border-color: #000c18;
+  color: black;
+  /* background-color: rgba(28, 3, 70); */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 20px 20px;
+  align-items: center;
+  /* justify-content: center; */
+}
+.Upper-Profile {
+  display: flex;
+  width: 70%;
+  padding-left: 15px;
+  color: black;
+}
+
+.DpArea {
+  background-color: #000c1800;
+  border: 2px solid rgb(143, 218, 124);
+}
+
+.nameBioFollowers {
+  z-index: 1;
+  color: black;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.nameAndusername {
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  /* align-items: center; */
+  justify-content: space-evenly;
+  margin-left: 30px;
+  height: 100%;
+  color: black;
+}
+.profilename {
+  font-size: 30px;
+  color: black;
+  font-weight: 500;
+}
+.profileusername {
+  font-size: 25px;
+  margin-top: -10px;
+  color: black;
+}
+
+.buttonsprofile {
+  height: 40px;
+  /* border: 2px solid grey; */
+  margin-bottom: -20px;
+  display: flex;
+  align-items: center;
+}
+
+.followerAndfollowing {
+  display: flex;
+  width: 45%;
+  color: black;
+  justify-content: space-between;
+  /* border: 1px solid rgb(240, 231, 231); */
+}
+.Upper-Profile-Mobile {
+  display: none;
+}
+.profilefollowing,
+.profilefollowers,
+.profilePosts {
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.F-heading {
+  font-size: 23px;
+}
+.F-count {
+  font-size: 25px;
+}
+.Profile-Bio {
+  margin: 25px 0;
+  width: 70%;
+  /* border: 2px solid white; */
+  font-size: 22px;
+  height: 80px;
+  padding-left: 15px;
+  color: black;
+}
+
+.allFeedGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 72%;
+  align-items: center;
+  /* border: 2px solid white; */
+  justify-content: flex-start;
+  height: 100%;
+  margin-top: 30px;
+}
+.allFeed {
+  display: none;
+  flex-direction: column;
+}
+.Dp-FFP-container-Mobile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.FFP {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.messagebutton-mobile {
+  width: 93px;
+  height: 28px;
+  background-color: rgb(51, 51, 221);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 600;
+  margin-top: 5px;
+}
+@media (max-width: 750px) {
+  .outer-ProfileScreen {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    overflow-x: hidden;
+  }
+  .ProfileScreen {
+    width: 100vw;
+    height: 100vh;
+
+    /* flex-direction: row; */
+  }
+  .Upper-Profile {
+    display: none;
+  }
+  .Upper-Profile-Mobile {
+    width: 95%;
+    display: flex;
+    margin-top: -15px;
+    flex-direction: column;
+  }
+  .FFP {
+    /* margin-top: 10px; */
+    /* align-items: stretch; */
+    justify-content: space-around;
+  }
+
+  .allFeedGrid {
+    display: none;
+  }
+  .allFeed {
+    display: flex;
+  }
+  .F-heading-mobile {
+    font-size: 17px;
+  }
+  .F-count-mobile {
+    font-size: 17px;
+  }
+  .nameBiofollow {
+    display: flex;
+    background-color: #dfe6c1;
+    padding: 7px 4px;
+    border-radius: 7px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 20px -4px;
+    height: 70px;
+  }
+  .followbutton-mobile {
+    margin: 0;
+  }
+  .nameusername-mobile {
+    margin: 0 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; */
+    justify-content: space-around;
+    height: 50px;
+  }
+  .profilename-mobile {
+    font-size: 20px;
+  }
+  .profileusername-mobile {
+    font-size: 16px;
+  }
+}

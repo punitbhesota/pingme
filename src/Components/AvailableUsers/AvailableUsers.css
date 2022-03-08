@@ -1,0 +1,54 @@
+.AvailableUsers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-width: 90%;
+  border-top: 10px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+.FullUserListCard {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  background-color: rgb(255, 231, 231);
+}
+.UserlistCard {
+  width: 90%;
+  margin-left: 5px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.nameUsername {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: black;
+}
+.UserlistCard--username {
+  font-size: 17px;
+  /* color : */
+}
+.UserlistCard--name {
+  font-size: 12px;
+  color: black;
+}
+.follow-button {
+  border: 1px solid orange;
+  color: orange;
+  height: 25px;
+
+  background-color: rgba(255, 255, 255, 0);
+}
+.follow-button2 {
+  border: 1px solid red;
+  color: red;
+  background-color: rgba(255, 255, 255, 0);
+  height: 25px;
+}

@@ -1,0 +1,105 @@
+.ChatPage {
+  display: flex;
+  height: 90.91vh;
+  overflow-y: hidden;
+}
+.myChats {
+  width: 25%;
+
+  /* border: 1px solid white; */
+}
+.myChats-heading {
+  padding-left: 35px;
+}
+.myChats-search {
+  outline: none;
+  border: none;
+  width: 80%;
+  height: 30px;
+  margin-left: 25px;
+  background-color: transparent;
+  border-bottom: 1px solid grey;
+  color: white;
+  font-size: 17px;
+  padding-left: 20px;
+}
+.myChats-people {
+  overflow-y: scroll;
+  height: 100%;
+}
+.myChats-people::-webkit-scrollbar {
+  display: none;
+}
+.myChats-person {
+  display: flex;
+  align-items: center;
+  margin: 35px 0 0 0px;
+}
+.currentChat {
+  width: 50%;
+  border-radius: 30px;
+  height: 95%;
+  margin-top: 25px;
+
+  /* margin-bottom: 70px; */
+}
+.current-chat-messages {
+  height: 75%;
+  overflow-y: scroll;
+}
+.current-chat-messages::-webkit-scrollbar {
+  display: none;
+}
+.currentChat-person {
+  background-color: orange;
+  height: 12%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 30px 30px 0 0;
+}
+.currentChat-person-dp {
+  margin: 0 10px 0 30px;
+}
+.currentChat-messages {
+  height: 77%;
+  border: 1px solid grey;
+}
+.currentChat-send-message-box {
+  height: 10%;
+  display: flex;
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  bottom: 0px;
+}
+.currentChat-input-message {
+  height: 96%;
+  width: 92%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding-left: 20px;
+  border-radius: 0 0 0px 30px;
+}
+.currentChat-send-message {
+  height: 100%;
+  width: 8%;
+  border: none;
+  background-color: white;
+  color: orange;
+  border-radius: 0 0 30px 0px;
+}
+.usersOnline {
+  width: 25%;
+  /* border: 1px solid white; */
+}
+.usersOnline-heading {
+  padding-left: 35px;
+}
+.heading {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+}

@@ -12,8 +12,24 @@ const UserSchema = new Schema(
     },
     displayPicture: {
       type: String,
-      default: "./default_dp2.png",
+      default: "./DefaultDp.jpg",
     },
+
+    profilePicture: {
+      url: {
+        type: String,
+        // required: true,
+        default: "",
+        // "https://res.cloudinary.com/social-mern/image/upload/v1633171722/depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar_tlkm1m.jpg",
+      },
+      cloudinary_id: {
+        type: String,
+        // required: true,
+        default: "",
+        // "depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar_tlkm1m",
+      },
+    },
+
     name: { type: String, required: true },
 
     email: { type: String, required: true, unique: true },

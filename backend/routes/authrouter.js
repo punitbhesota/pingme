@@ -1,4 +1,4 @@
-// const path = require("path");
+const path = require("path");
 const express = require("express");
 const User = require("../models/UserSchema");
 const router = express.Router();
@@ -8,12 +8,13 @@ var jwt = require("jsonwebtoken");
 const JWT_SECRET = "ThisIsJWTSecret";
 var fetchuser = require("../middleware/fetchuser");
 const multer = require("multer");
+const cloudinary = require("../utils/cloudinary");
 
 //storage define for upload posts
 const storage = multer.diskStorage({
   //file destination
   destination: function (request, file, callback) {
-    callback(null, "./public/uploads/dps");
+    callback(null, path.join(path.resolve(), "backend", "uploads"));
   },
 
   //file name
@@ -74,7 +75,7 @@ router.post(
       res.status(200).json({ authToken });
     } catch (error) {
       console.log(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send("Intternal Server Error");
     }
   }
 );
@@ -131,6 +132,19 @@ router.get("/getuserdetails/:username", async (req, res) => {
   try {
     const userName = req.params.username;
     const user = await User.findOne({ username: userName })
+      .select("-password")
+      .populate({ path: "posts", options: { sort: "-createdAt" } });
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+router.get("/getuserdetailsbyid/:id", async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.findById(userId)
       .select("-password")
       .populate({ path: "posts", options: { sort: "-createdAt" } });
     res.status(200).json(user);
@@ -198,15 +212,16 @@ router.put(
   fetchuser,
   async (req, res) => {
     try {
+      // const photoresult = await cloudinary.uploader.upload(req.file.path)
       const userId = req.body.id;
-      // const dp = req.body.displayPicture;
-      const dp = req.file.displayPicture;
       console.log(req.file.path);
 
-      await User.findByIdAndUpdate(userId, { $set: { displayPicture: dp } });
-      // await User.findByIdAndUpdate(userId).then((user) => {
-      //   user.displayPicture = req.file.originalname;
-      // user.save().then(() =>
+      await User.findByIdAndUpdate(userId, {
+        $set: {
+          displayPicture: `http://localhost:5000/uploads/${req.file.originalname}`,
+          // cloudinary_id: photoresult.public_id
+        },
+      });
       res.status(200).json({
         message: "DP updated",
       });

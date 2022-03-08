@@ -68,23 +68,6 @@ const followUser = (type, token, targetId) => async (dispatch) => {
   dispatch({ type: "USER_LOGIN", payload: { user, token } });
 };
 
-const changeDp = (dpimage, token) => async (dispatch) => {
-  await axios.put(
-    "/api/auth/adddisplaypicture",
-    { displayPicture: dpimage },
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-  const { data: user } = await axios.get("/api/auth/getuser", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  dispatch({ type: "USER_LOGIN", payload: { user, token } });
-};
 export {
   createUser,
   loginUser,
@@ -93,6 +76,6 @@ export {
   getAllUsers,
   getUserDetails,
   followUser,
-  changeDp,
+
   // unfollowUser,
 };

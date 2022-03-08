@@ -1,0 +1,53 @@
+.InnerNavMobile {
+  width: 100vw;
+  /* height: 100%; */
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  color: black;
+  display: none;
+  justify-content: space-between;
+  /* margin: 0 13px 0 10px; */
+  background-color: #131414;
+  /* border: 1px solid grey; */
+}
+.innerNavMobile-inner {
+  background-color: #131414;
+  height: 55px;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 0 10px;
+  /* border-top: 1px solid rgb(231, 231, 231); */
+  /* border-radius: 10px; */
+  margin-bottom: 3px;
+}
+.chatpage-icon-mobile {
+  color: white;
+  margin-bottom: -4px;
+}
+.home-icon-mobile {
+  color: white;
+  height: 23px;
+}
+.logOut-mobile {
+  color: white;
+  outline: none;
+  border: none;
+  background-color: #131414;
+}
+.nav-search-mobile {
+  color: white;
+  margin-bottom: -2px;
+}
+.addpost-icon-mobile {
+  color: orange;
+  margin-bottom: -3px;
+}
+
+@media (max-width: 750px) {
+  .InnerNavMobile {
+    display: flex;
+  }
+}

@@ -1,0 +1,172 @@
+.Signup {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 231, 231);
+}
+
+.LoginPage {
+  background: linear-gradient(
+        90deg,
+        hsl(256, 33, 10),
+        (22px - 1px),
+        transparent 1%
+      )
+      center,
+    linear-gradient(hsl(256, 33, 10), (22px - 1px), transparent 1%) center,
+    hsl(256, 33, 70);
+  background-size: 22px 22px;
+}
+.marquees {
+  position: absolute;
+}
+.backText {
+  font-size: 150px;
+  width: 100%;
+  /* border: 1px solid black; */
+  font-weight: 800;
+  /* position: absolute; */
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: orange;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.backText2 {
+  direction: left;
+}
+.backText div {
+  display: inline-block;
+}
+.sign-Box {
+  z-index: 1;
+  background-color: #000218;
+  height: 85%;
+  width: 35%;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cir-design {
+  height: 35%;
+  border-radius: 34px 34px 0 0;
+  background-image: url("./patternpad.png");
+  background-position: center;
+
+  /* border: 1px solid white; */
+  width: 100%;
+}
+.hello {
+  color: white;
+  font-family: "Lobster", cursive;
+  font-size: 35px;
+  width: 100%;
+  /* border: 1px solid orange; */
+  display: flex;
+  height: 10%;
+  margin-top: 10px;
+}
+.emp {
+  width: 10%;
+}
+.sign-Form {
+  height: 95%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+.name,
+.username,
+.sign-email,
+.sign-password {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.363);
+  height: 20%;
+  margin-top: 12px;
+  width: 70%;
+  border-radius: 40px;
+  color: white;
+  padding: 0 20px;
+}
+.name::placeholder {
+  color: white;
+}
+.username::placeholder {
+  color: white;
+}
+.sign-email::placeholder {
+  color: white;
+}
+.sign-password::placeholder {
+  color: white;
+}
+
+.signup-button {
+  background-color: #e26e33;
+  color: white;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  width: 25%;
+  /* height: 50px; */
+  border-radius: 40px;
+  font-size: 20px;
+  padding: 6px 0px;
+}
+.already-user {
+  display: flex;
+  margin-top: 5px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.already-user div {
+  color: #e26e33;
+  padding-left: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media (max-width: 750px) {
+  .Signup {
+    height: 100%;
+  }
+  .sign-Box {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    background-color: #000c18;
+  }
+  .cir-design {
+    border-radius: 0;
+    height: 40%;
+    background-position: left center;
+  }
+  .hello {
+    height: 25%;
+  }
+  .signup-button {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .sign-Form {
+    height: 100vh;
+  } */
+  .name,
+  .username,
+  .sign-email,
+  .sign-password {
+    font-size: 15px;
+    width: 80%;
+  }
+}
